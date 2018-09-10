@@ -951,7 +951,7 @@ more check out the settings via `:help go-settings`
   spaces for a single tab. However it's up to us how to represent in Vim. The
   following will change it to show a single tab as 4 spaces:
 
-```
+```vim
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
 ```
 
