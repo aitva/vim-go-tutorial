@@ -139,7 +139,7 @@ Let us improve it a little bit. Vim has a setting called `autowrite` that
 writes the content of the file automatically if you call `:make`. vim-go also
 makes use of this setting. Open your `.vimrc` and add the following:
 
-```
+```vim
 set autowrite
 ```
 
@@ -158,7 +158,7 @@ whenever there is an error the quickfix window always will pop up.
 * You can add some shortcuts to make it easier to jump between errors in quickfix
 list:
 
-```vi
+```vim
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
@@ -502,7 +502,7 @@ this case for us. If you haven't heard yet, it's called `goimports`.
 first (and recommended) way is telling vim-go to use it when saving the
 file:
 
-```
+```vim
 let g:go_fmt_command = "goimports"
 ```
 
@@ -762,7 +762,7 @@ automatically expanded to valid field tag. The field name is converted
 automatically to a lowercase and put there for you. You should now see the
 following:
 
-```
+```go
 type foo struct {
 	Message  string `json:"message"`
 }
@@ -819,7 +819,7 @@ let g:go_highlight_types = 1
 
 This highlights the `bar` and `foo` below:
 
-```
+```go
 type foo struct{
   quz string
 }
@@ -1324,13 +1324,13 @@ let g:go_def_mode = 'godef'
   declarations. This is customizable with the `g:go_decls_includes` setting. By
   default it's in the form of:
 
-```
+```vim
 let g:go_decls_includes = "func,type"
 ```
 
 If you just want to show function declarations, change it to:
 
-```
+```vim
 let g:go_decls_includes = "func"
 ```
 
@@ -1835,7 +1835,7 @@ you can also define a permanent scope by adding a setting to your `vimrc`. The
 value needs to be a list of string types. Here are some examples from the
 commands above:
 
-```
+```vim
 let g:go_guru_scope = ["github.com/fatih/vim-go-tutorial"]
 let g:go_guru_scope = ["..."]
 let g:go_guru_scope = ["github.com/...", "golang.org/x/tools"]
@@ -1884,7 +1884,7 @@ just like `:GoGuruScope`, you can clear it with:
 
 And finally if you wish you can make it permanent with the following setting:
 
-```
+```vim
 let g:go_build_tags = "mycustomtag"
 ```
 
@@ -2165,14 +2165,14 @@ same as what's on play.golang.org.
 There are two settings to tweak the behavior of `:GoPlay`. If you don't like
 that `vim-go` opens a browser tab for you, you can disable it with:
 
-```
+```vim
 let g:go_play_open_browser = 0
 ```
 
 Secondly, if your browser is misdetected (we're using `open` or `xdg-open`) you
 can manually set the browser via:
 
-```
+```vim
 let g:go_play_browser_command = "chrome"
 ```
 
@@ -2181,7 +2181,7 @@ let g:go_play_browser_command = "chrome"
 By default syntax highlighting for Go HTML template is enabled for `.tmpl` files.
 If you want to enable it for another filetype add the following setting to your `.vimrc`:
 
-```
+```vim
 au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
 ```
 
